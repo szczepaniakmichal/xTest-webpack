@@ -24,10 +24,10 @@ export class Game {
 
 
     generatePassword() {
-        console.log("this.quotes", this.quotes)
+        // console.log("this.quotes", this.quotes)
         const randomNumber = Math.floor(Math.random() * this.quotes.length);
         const { text, category } = this.quotes[randomNumber];
-        console.log(text)
+        // console.log(text)
         this.passwordWrapper.textContent = text;
         this.categoryWrapper.textContent = category;
     }
