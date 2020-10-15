@@ -1,0 +1,49 @@
+//$color: black;
+
+body {
+  margin: 0;
+  //background-color: $color;
+  font-family: arial;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100vw;
+  padding: 5px 0;
+  background: rgba(0, 0, 0, 0.1);
+  //color: $color;
+  font-size: 12px;
+  mix-blend-mode: difference;
+
+  p {
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+
+  &__buy-project {
+    grid-area: 1/1/2/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__gratis {
+    grid-area: 1/4/2/7;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+  }
+
+  .fa-drafting-compass,
+  .fa-truck,
+  .fa-gift,
+  .fa-hand-holding-usd {
+    font-size: 20px;
+  }
+}
