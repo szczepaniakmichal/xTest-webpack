@@ -1,8 +1,8 @@
 import './sass/index.scss';
 
-import {tooltip} from "./scripts/tooltip";
+import {test} from "./scripts/test";
 
 window.onload = () => {
-    tooltip();
+    test("1 71 3 13 5 -32");
 }
 

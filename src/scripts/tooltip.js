@@ -1,4 +1,0 @@
-function tooltip() {
-}
-
-export { tooltip }
