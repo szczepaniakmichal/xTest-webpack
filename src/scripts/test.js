@@ -1,7 +1,13 @@
 function test(numbers) {
-    const filterNumbers = numbers.filter(number => number > 0);
-    const sortNumbers = filterNumbers.sort((a, b) => a - b);
-    return sortNumbers.slice(0, 2).reduce((accumulator, currentValue) => accumulator + currentValue);
+    if (!(numbers.length === 4 || numbers.length === 6)) return false;
+
+    for (let i = 0; i < numbers.length; i++) {
+        if (isNaN(numbers.charAt(i))) return false;
+    }
+
+    return true;
 }
+
+test("1234");
 
 export { test }
