@@ -1,5 +1,5 @@
 function test(numbers) {
-    if (!(numbers.length === 4 || numbers.length === 6)) return false;
+    if (!new RegExp(/^\d{4}$|^\d{6}$/).test(numbers)) return false;
 
     for (let i = 0; i < numbers.length; i++) {
         if (isNaN(numbers.charAt(i))) return false;
@@ -8,6 +8,7 @@ function test(numbers) {
     return true;
 }
 
-test("1234");
+test("e12345");
 
 export { test }
+
