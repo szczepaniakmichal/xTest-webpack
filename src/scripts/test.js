@@ -1,7 +1,5 @@
 function test(s) {
-    let shortestLength = s.length;
-    s.split(' ').forEach(el => el.length < shortestLength ? shortestLength = el.length : shortestLength);
-    return shortestLength;
+    return (s.split(' ').sort((a,b) => a.length - b.length))[0].length;
 }
 
 document.querySelector(".test").textContent = test("bitcoin take over the world maybe who knows perhaps");
