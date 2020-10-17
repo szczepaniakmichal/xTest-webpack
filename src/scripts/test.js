@@ -1,41 +1,8 @@
-function test(walk) {
-    if (walk.length !== 10) return;
-
-    let north = 0;
-    let east = 0;
-    let south = 0;
-    let west = 0;
-
-    walk.forEach(direction => {
-        switch (direction) {
-            case 'n': return  north++;
-            case 'e': return  east++;
-            case 's': return  south++;
-            case 'w': return  west++;
-        }
-    })
-
-    if (north !== south || east !== west) {
-        return test(generator());
-    }
-    return walk;
+function test(friends) {
+    return friends.filter(friend => friend.length === 4);
 }
 
-const generator = () => {
-    const direction = ['n', 'e', 's', 'w'];
-    const suggestedDirection = [];
-    for (let i = 0; i < 10; i++) {
-        const random = Math.floor(Math.random() * direction.length);
-        suggestedDirection.push(direction[random]);
-    }
-    return suggestedDirection;
-}
-
-
-document.querySelector(".test").textContent = test(generator());
-
-
-
+document.querySelector(".test").textContent = test(["Ryan", "Kieran", "Jason", "Yous"]);
 
 export { test }
 
