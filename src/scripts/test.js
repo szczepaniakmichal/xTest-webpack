@@ -15,7 +15,10 @@ function test(walk) {
         }
     })
 
-    return (north === south && east === west);
+    if (north !== south || east !== west) {
+        return test(generator());
+    }
+    return walk;
 }
 
 const generator = () => {
