@@ -1,13 +1,13 @@
 function test(s) {
-    const lengthArr = [];
-    const wordArr = s.split(' ');
-    wordArr.forEach(word => {
-        lengthArr.push(word.length)
-    })
-    return Math.min(...lengthArr);
+    const wordsArr = s.split(' ');
+    const shortest = wordsArr.reduce((shortWord, currentWord) => {
+        return currentWord.length < shortWord.length ? currentWord : shortWord
+    });
+    return shortest.length;
 }
 
-test("bitcoin take over the world maybe who knows perhaps");
+document.querySelector(".test").textContent = test("bitcoin take over the world maybe who knows perhaps");
+
 
 export { test }
 
