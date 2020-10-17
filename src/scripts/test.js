@@ -1,14 +1,13 @@
-function test(numbers) {
-    if (!new RegExp(/^\d{4}$|^\d{6}$/).test(numbers)) return false;
-
-    for (let i = 0; i < numbers.length; i++) {
-        if (isNaN(numbers.charAt(i))) return false;
-    }
-
-    return true;
+function test(s) {
+    const lengthArr = [];
+    const wordArr = s.split(' ');
+    wordArr.forEach(word => {
+        lengthArr.push(word.length)
+    })
+    return Math.min(...lengthArr);
 }
 
-test("e12345");
+test("bitcoin take over the world maybe who knows perhaps");
 
 export { test }
 
