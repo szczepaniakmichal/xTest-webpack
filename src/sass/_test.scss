@@ -1,51 +1,102 @@
-//$color: black;
+$color-green: green;
+$color-light-green: greenyellow;
+$color-text: #fff;
 
 body {
   margin: 0;
-  //background-color: $color;
-  font-family: arial;
-  font-size: 36px;
-  text-align: center;
+  padding-top: 150px;
+
+  .modal {
+    position: fixed;
+    top: 0;
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+    font-family: "DejaVu Sans", sans-serif;
+    font-weight: 700;
+    color: #fff;
+    opacity: 0;
+    z-index: -1;
+
+    &__copy {
+      font-size: 3rem;
+      background-color: $color-green;
+      opacity: 0.7;
+      transition: 1s;
+      z-index: 1;
+    }
+
+    &__hide {
+      opacity: 0;
+      transition: 1s;
+    }
+  }
+
+  .btn {
+    display: block;
+    padding: 10px 20px;
+    background-color: $color-green;
+    border: 1px solid $color-green;
+    color: $color-text;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    &.btn-get-element {
+      margin: 30px auto;
+    }
+
+    &.btn-check-string {
+
+    }
+  }
+
+
+  .halo {
+    color: darkorange;
+  }
+
+  .inputStyle {
+    display: block;
+    margin: 10px auto;
+    width: 96%;
+    font-size: 30px;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px $color-green;
+      border: 1px solid $color-green;
+    }
+  }
 }
 
-.top-bar {
+.grid-container {
+  margin: 30px auto;
+  border: silver 2px solid;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  width: 100vw;
-  padding: 5px 0;
-  background: rgba(0, 0, 0, 0.1);
-  //color: $color;
-  font-size: 12px;
-  mix-blend-mode: difference;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  place-content: center center;
+  width: max-content;
 
-  p {
-    margin: 0;
-    padding: 0 10px;
-    cursor: pointer;
+  .grid-items {
+    width: 80px;
+    height: 80px;
+    background-color: gray;
+
+    &:first-child {
+      width: 100%;
+      grid-column: 1/3;
+    }
+
+    &:last-child {
+      grid-column: 2/3;
+    }
   }
+}
 
-  &__buy-project {
-    grid-area: 1/1/2/4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__gratis {
-    grid-area: 1/4/2/7;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .center {
-    display: flex;
-    align-items: center;
-  }
-
-  .fa-drafting-compass,
-  .fa-truck,
-  .fa-gift,
-  .fa-hand-holding-usd {
-    font-size: 20px;
+@media screen and (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
