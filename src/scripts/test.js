@@ -1,10 +1,18 @@
-function test(text) {
-    return text.toLowerCase().split('').filter(char => (/[a-z]/g.test(char))).map(properSing => properSing.charCodeAt()-96).join(' ');
+function test() {
+    const parent = document.querySelector("body > div.top-bar > ul > li:nth-child(2)");
+    parent.addEventListener('mouseover', () => {
+        console.log("asfas")
+        document.querySelector("body > div.top-bar > ul > li:nth-child(2) > ul").style.display = 'block';
+    })
+
+    parent.addEventListener('mouseleave', () => {
+        console.log("asfas")
+        document.querySelector("body > div.top-bar > ul > li:nth-child(2) > ul").style.display = 'none';
+    })
 }
 
-document.querySelector(".test").textContent = test('htr/r:7M&2 }*');
-
-test("The sunset sets at twelve o' clock.")
+// document.querySelector(".test").textContent = test('htr/r:7M&2 }*');
+// test("The sunset sets at twelve o' clock.")
 
 export { test }
 
