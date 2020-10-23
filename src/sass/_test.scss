@@ -6,27 +6,4 @@ body {
   align-items: center;
   margin: 0;
   overflow: hidden;
-  background-image: url("https://images.pexels.com/photos/5591708/pexels-photo-5591708.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: max-content;
-  min-width: max-content;
-
-  .parent {
-    min-width: max-content;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.4);
-
-    .child {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-      background-color: rgba(255, 255, 255, 0.6);
-
-      h1 {
-        margin: 0;
-      }
-    }
-  }
 }
