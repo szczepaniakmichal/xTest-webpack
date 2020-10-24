@@ -1,9 +1,14 @@
-function test() {
-
+function test(n) {
+    let array = n.toString().split('');
+    let sum = 0;
+    array.forEach(digit => {
+        sum += Number(digit)
+    })
+    return sum > 9 ? test(sum) : sum;
 }
 
-// document.querySelector(".test").textContent = test('htr/r:7M&2 }*');
-// test("The sunset sets at twelve o' clock.")
+document.querySelector(".test").textContent = test(493193);
+test(493193    );
 
 export { test }
 
