@@ -1,10 +1,8 @@
 function test(n) {
-    let sum = 0;
-    n.toString().split('').forEach(digit => sum += Number(digit));
-    return sum > 9 ? test(sum) : sum;
+    return (n - 1) % 9 + 1;
 }
 
-document.querySelector(".test").textContent = test(493193);
+document.querySelector(".test").textContent = test(12);
 test(9007199254740991);
 
 export { test }
