@@ -1,14 +1,11 @@
 function test(n) {
-    let array = n.toString().split('');
     let sum = 0;
-    array.forEach(digit => {
-        sum += Number(digit)
-    })
+    n.toString().split('').forEach(digit => sum += Number(digit));
     return sum > 9 ? test(sum) : sum;
 }
 
 document.querySelector(".test").textContent = test(493193);
-test(493193    );
+test(9007199254740991);
 
 export { test }
 
