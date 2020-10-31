@@ -1,9 +1,19 @@
-function test(num) {
-    return Number(num.toString().split('').map(digit => Math.pow(digit, 2)).join(''));
+function test(n) {
+    let number = 1;
+    let value = 1;
+    if (n === 0) return n.toFixed(2);
+    if (n > 0) {
+        for (let i = 1; i < n; i++) {
+            value += 3;
+            number += 1 / value;
+        }
+        return String(number.toFixed(2));
+    }
 }
 
-document.querySelector(".test").textContent = test(123456789);
-// test(9007199254740991);
+document.querySelector(".test").textContent = test(5);
+test(2);
+test(5);
 
 export { test }
 
