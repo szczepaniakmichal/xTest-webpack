@@ -1,13 +1,11 @@
 function test(customers, n) {
-    const cashbox = new Array(n).fill(0);
-    customers.forEach(customer => {
-        let nextCashbox = cashbox.indexOf(Math.min(...cashbox));
-        cashbox[nextCashbox] += customer;
-    })
-    return Math.max(...cashbox);
+    return Math.max(...(customers.reduce((prev, next) => {
+       prev[prev.indexOf(Math.min(...prev))] += next;
+       return prev;
+    }, Array(n).fill(0))))
 }
 
-// document.querySelector(".test").textContent = test("AWUBBWUBC");
+document.querySelector(".test").textContent = test([2, 3, 3], 2);
 test([10, 2, 3, 3], 2);
 
 export { test }
