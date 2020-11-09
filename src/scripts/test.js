@@ -1,8 +1,5 @@
 function test(customers, n) {
-    const cashbox = [];
-    for (let i = 0; i < n; i++) {
-       cashbox.push(0)
-   }
+    const cashbox = new Array(n).fill(0);
     customers.forEach(customer => {
         cashbox[0] += customer;
         cashbox.sort((x, y) => x - y)
@@ -11,7 +8,7 @@ function test(customers, n) {
 }
 
 // document.querySelector(".test").textContent = test("AWUBBWUBC");
-test([2,3,7,1], 3);
+test([10, 2, 3, 3], 2);
 
 export { test }
 
