@@ -1,10 +1,10 @@
 function test(customers, n) {
     const cashbox = new Array(n).fill(0);
     customers.forEach(customer => {
-        cashbox[0] += customer;
-        cashbox.sort((x, y) => x - y)
+        let nextCashbox = cashbox.indexOf(Math.min(...cashbox));
+        cashbox[nextCashbox] += customer;
     })
-    return cashbox[cashbox.length - 1];
+    return Math.max(...cashbox);
 }
 
 // document.querySelector(".test").textContent = test("AWUBBWUBC");
