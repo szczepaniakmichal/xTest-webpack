@@ -1,28 +1,36 @@
 function test(s) {
     console.log(s)
+
+    if (s.length === 1) return s;
     s = s.toLowerCase();
     for (let i = 0; i < s.length; i++) {
         let counter = 0;
-        const currentStr = s.slice(i+1);
 
-        for (let j = 0; j < currentStr.length; j++) {
-            if (s[i] === currentStr[j]) {
-                console.log("podbijam", s[i], currentStr[j])
+        for (let j = 0; j < s.length; j++) {
+
+            if (i === j) {
+                console.log(`${s[i]} ${s[j]} ten sam index`);
+                // console.log("podbijam", s[i], s[j])
+                // counter++
+            }
+            if (s[i] === s[j]) {
+                console.log(`${s[i]} ${s[j]} powtarzaja się`);
                 counter++
             }
-        }
-        console.log(counter)
-        if (counter <= 0) {
-            console.log(`nie powtarzajaca sie litera ${s[i]}`)
-            return s[i];
-        } else if (counter === 0) {
-            return '';
+
+            console.log(counter)
+            if (counter <= 0) {
+                console.log(`nie powtarzajaca sie litera ${s[i]}`)
+                return s[i];
+            } else if (counter === 0) {
+                return '';
+            }
         }
     }
 }
 
 // document.querySelector(".test").textContent = test(5);
-test("sstt");
+test("moonmen");
 
 export { test }
 
