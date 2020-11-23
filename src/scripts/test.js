@@ -1,12 +1,18 @@
-function test(customers, n) {
-    return Math.max(...(customers.reduce((prev, next) => {
-       prev[prev.indexOf(Math.min(...prev))] += next;
-       return prev;
-    }, Array(n).fill(0))))
+function test(num) {
+    if (num < 2) {
+        return false;
+    }
+    const counter = [];
+    for (let i = 1; i <= num; i++) {
+        if (num % i === 0) {
+            counter.push(i)
+        }
+    }
+    return counter.length < 3
 }
 
-document.querySelector(".test").textContent = test([2, 3, 3], 2);
-test([10, 2, 3, 3], 2);
+// document.querySelector(".test").textContent = test(5);
+test(2);
 
 export { test }
 
