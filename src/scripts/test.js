@@ -1,18 +1,12 @@
 function test(num) {
-    if (num < 2) {
-        return false;
-    }
-    const counter = [];
-    for (let i = 1; i <= num; i++) {
-        if (num % i === 0) {
-            counter.push(i)
-        }
-    }
-    return counter.length < 3
+    if (num < 2) return false;
+    let counter = 0;
+    for (let i = 1; i <= num; i++) num % i === 0 ? counter++ : null
+    return counter < 3
 }
 
 // document.querySelector(".test").textContent = test(5);
-test(2);
+test(69);
 
 export { test }
 
