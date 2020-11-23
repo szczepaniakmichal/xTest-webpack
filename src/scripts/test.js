@@ -1,12 +1,28 @@
-function test(num) {
-    if (num < 2) return false;
-    let counter = 0;
-    for (let i = 1; i <= num; i++) num % i === 0 ? counter++ : null
-    return counter < 3
+function test(s) {
+    console.log(s)
+    s = s.toLowerCase();
+    for (let i = 0; i < s.length; i++) {
+        let counter = 0;
+        const currentStr = s.slice(i+1);
+
+        for (let j = 0; j < currentStr.length; j++) {
+            if (s[i] === currentStr[j]) {
+                console.log("podbijam", s[i], currentStr[j])
+                counter++
+            }
+        }
+        console.log(counter)
+        if (counter <= 0) {
+            console.log(`nie powtarzajaca sie litera ${s[i]}`)
+            return s[i];
+        } else if (counter === 0) {
+            return '';
+        }
+    }
 }
 
 // document.querySelector(".test").textContent = test(5);
-test(69);
+test("sstt");
 
 export { test }
 
