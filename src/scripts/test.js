@@ -1,12 +1,11 @@
-function test(customers, n) {
-    return Math.max(...(customers.reduce((prev, next) => {
-       prev[prev.indexOf(Math.min(...prev))] += next;
-       return prev;
-    }, Array(n).fill(0))))
+function test(newColor) {
+    document.documentElement.style.setProperty('--color', newColor);
 }
 
-document.querySelector(".test").textContent = test([2, 3, 3], 2);
-test([10, 2, 3, 3], 2);
+// document.querySelector(".test").textContent = test("AWUBBWUBC");
+test("red");
+// test("AWUBWUBWUBWUBWUBWUBBWUBWUBWUBC");
+// test("WUBAWUBBWUBCWUB");
 
 export { test }
 
@@ -20,4 +19,3 @@ export { test }
 // a.charCodeAt(0)-96) - why is 0 in brackets?
 // return text.toLowerCase().split("").filter(el => (/[a-z]/g.test(el))).map(a => a.charCodeAt(0)-96).join(" ");
 // regEx - find space or multiple spaces  /  +/g
-
