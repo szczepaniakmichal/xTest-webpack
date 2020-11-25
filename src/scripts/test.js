@@ -46,7 +46,6 @@ function test() {
         el.textContent = 'Are strings is equal?'
         const str1 = firstStr.value;
         const str2 = secondStr.value;
-        if (str1 === '' || str2 === '') return ;
         let btnText =  btnCheckString.textContent;
         if (str1 === str2) {
             el.textContent = `${btnText} yes`
@@ -56,11 +55,11 @@ function test() {
             el.textContent = `${btnText} error`
         }
     }
-    btnCheckString.addEventListener('click', () => isStrEqual(checkString1, checkString2, btnCheckString))
+    // btnCheckString.addEventListener('click', () => isStrEqual(checkString1, checkString2, btnCheckString));
 
     textareaCheckString.forEach(input => {
-        input.addEventListener('click', () => {
-            btnCheckString.textContent = 'Are strings is equal?';
+        input.addEventListener('input', () => {
+            isStrEqual(checkString1, checkString2, btnCheckString);
         })
     })
 }
