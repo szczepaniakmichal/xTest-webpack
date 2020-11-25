@@ -40,11 +40,10 @@ function test() {
     const checkString1 = document.querySelector('.check-string-1');
     const checkString2 = document.querySelector('.check-string-2');
     const btnCheckString = document.querySelector('.btn-check-string');
+    const textareaCheckString = document.querySelectorAll('.equal');
 
     const isStrEqual = (firstStr, secondStr, el) => {
         el.textContent = 'Are strings is equal?'
-        // const str1 = String(firstStr.value).valueOf();
-        // const str2 = String(secondStr.value).valueOf();
         const str1 = firstStr.value;
         const str2 = secondStr.value;
         if (str1 === '' || str2 === '') return ;
@@ -58,6 +57,12 @@ function test() {
         }
     }
     btnCheckString.addEventListener('click', () => isStrEqual(checkString1, checkString2, btnCheckString))
+
+    textareaCheckString.forEach(input => {
+        input.addEventListener('click', () => {
+            btnCheckString.textContent = 'Are strings is equal?';
+        })
+    })
 }
 
 
