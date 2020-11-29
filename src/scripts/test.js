@@ -1,36 +1,30 @@
 function test(s) {
-    console.log(s)
-
     if (s.length === 1) return s;
-    s = s.toLowerCase();
+    if (s.length === 0) return '';
+    // s = s.toLowerCase();
+
     for (let i = 0; i < s.length; i++) {
         let counter = 0;
 
         for (let j = 0; j < s.length; j++) {
-
-            if (i === j) {
-                console.log(`${s[i]} ${s[j]} ten sam index`);
-                // console.log("podbijam", s[i], s[j])
-                // counter++
-            }
-            if (s[i] === s[j]) {
-                console.log(`${s[i]} ${s[j]} powtarzaja się`);
+            if (s[i].toLowerCase() === s[j].toLowerCase()) {
                 counter++
             }
+        }
 
-            console.log(counter)
-            if (counter <= 0) {
-                console.log(`nie powtarzajaca sie litera ${s[i]}`)
-                return s[i];
-            } else if (counter === 0) {
-                return '';
-            }
+        if (counter === 0) {
+            console.log("zero")
+            return '';
+        }
+        if (counter === 1) {
+            console.log(`nie powtarzajaca sie litera to: ${s[i]}`)
+            return s[i];
         }
     }
 }
 
 // document.querySelector(".test").textContent = test(5);
-test("moonmen");
+test("settresrs");
 
 export { test }
 
