@@ -1,7 +1,6 @@
 function test(s) {
     if (s.length === 1) return s;
     if (s.length === 0) return '';
-    // s = s.toLowerCase();
 
     for (let i = 0; i < s.length; i++) {
         let counter = 0;
@@ -12,19 +11,16 @@ function test(s) {
             }
         }
 
-        if (counter === 0) {
-            console.log("zero")
-            return '';
-        }
         if (counter === 1) {
             console.log(`nie powtarzajaca sie litera to: ${s[i]}`)
             return s[i];
         }
     }
+    return '';
 }
 
 // document.querySelector(".test").textContent = test(5);
-test("settresrs");
+test("sTreSs");
 
 export { test }
 
