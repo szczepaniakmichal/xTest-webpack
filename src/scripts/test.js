@@ -1,26 +1,27 @@
 function test(s) {
-    if (s.length === 1) return s;
     if (s.length === 0) return '';
+    if (s.length === 1) return s;
 
     for (let i = 0; i < s.length; i++) {
         let counter = 0;
+        const currentStr = s.slice(i + 1);
 
-        for (let j = 0; j < s.length; j++) {
-            if (s[i].toLowerCase() === s[j].toLowerCase()) {
+        for (let j = 0; j < currentStr.length; j++) {
+            console.log(`${s[i]} ${currentStr[j]}`)
+            if (s[i].toLowerCase() === currentStr[j].toLowerCase()) {
                 counter++
             }
         }
 
-        if (counter === 1) {
-            console.log(`nie powtarzajaca sie litera to: ${s[i]}`)
+        if (counter === 0) {
             return s[i];
         }
     }
     return '';
 }
 
-// document.querySelector(".test").textContent = test(5);
-test("sTreSs");
+document.querySelector(".test").textContent = test("moonmen");
+// test("stress");
 
 export { test }
 
