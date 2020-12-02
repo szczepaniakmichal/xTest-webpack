@@ -1,27 +1,9 @@
-function test(s) {
-    if (s.length === 0) return '';
-    if (s.length === 1) return s;
+function test(braces) {
 
-    for (let i = 0; i < s.length; i++) {
-        let counter = 0;
-        const currentStr = s.slice(i + 1);
-
-        for (let j = 0; j < currentStr.length; j++) {
-            console.log(`${s[i]} ${currentStr[j]}`)
-            if (s[i].toLowerCase() === currentStr[j].toLowerCase()) {
-                counter++
-            }
-        }
-
-        if (counter === 0) {
-            return s[i];
-        }
-    }
-    return '';
 }
 
-document.querySelector(".test").textContent = test("moonmen");
-// test("stress");
+// document.querySelector(".test").textContent = test("moonmen");
+test("(){}[]");
 
 export { test }
 
