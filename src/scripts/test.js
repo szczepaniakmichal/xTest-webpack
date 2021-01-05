@@ -33,8 +33,6 @@ function test() {
     resultToLowerCase.addEventListener('click', () => copyText("resultToLowerCase"));
 
 
-
-
     // check is string equal??
 
     const checkString1 = document.querySelector('.check-string-1');
@@ -46,7 +44,7 @@ function test() {
         el.textContent = 'Are strings is equal?'
         const str1 = firstStr.value;
         const str2 = secondStr.value;
-        let btnText =  btnCheckString.textContent;
+        let btnText = btnCheckString.textContent;
         if (str1 === str2) {
             el.textContent = `${btnText} yes`
         } else if (str1 !== str2) {
@@ -55,13 +53,25 @@ function test() {
             el.textContent = `${btnText} error`
         }
     }
-    // btnCheckString.addEventListener('click', () => isStrEqual(checkString1, checkString2, btnCheckString));
 
     textareaCheckString.forEach(input => {
         input.addEventListener('input', () => {
             isStrEqual(checkString1, checkString2, btnCheckString);
         })
     })
+
+    // mark character in string
+
+    const txt = document.querySelector('.mark').textContent;
+    const newMark = document.querySelector('.newMark');
+
+    for (let i = 0; i < txt.length; i++) {
+        if (txt[i] === 'b') {
+            newMark.innerHTML += `<mark>${txt[i]}</mark>`
+        } else {
+            newMark.innerHTML += txt[i];
+        }
+    }
 }
 
 
