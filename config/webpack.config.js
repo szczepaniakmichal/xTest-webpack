@@ -55,5 +55,9 @@ module.exports = {
       template: "src/templates/index.html",
       title: "nowa aplikacja"
     }),
-  ]
+  ],
+  watchOptions: {
+    poll: true,
+    ignored: /node_modules/
+  }
 }
