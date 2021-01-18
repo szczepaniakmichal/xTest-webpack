@@ -1,14 +1,9 @@
-function test(braces) {
-    const regex = /\(\)|\[\]|\{\}/;
-    const validBraces = braces => regex.test(braces)
-        ? validBraces(braces.replace(regex, ''))
-        : '' === braces
+function test() {
 
-    return validBraces(braces)
 }
 
 // document.querySelector(".test").textContent = test("moonmen");
-console.log(test("(){}[]"))
+console.log(test())
 
 export { test }
 
