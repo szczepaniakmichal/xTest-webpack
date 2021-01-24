@@ -1,15 +1,5 @@
 function test() {
-    const array = ['car', 'truck', 'bike', 'walk', 'bike', 'car', 'bike', 'bike', 'car', 'walk'];
-    // console.log(array);
 
-    const transport = array.reduce(function (obj, item) {
-        if (!obj[item]) {
-            obj[item] = 0;
-        }
-        obj[item]++
-        return obj;
-    }, {})
-    console.log(transport);
 }
 
 // document.querySelector(".test").textContent = test("moonmen");
