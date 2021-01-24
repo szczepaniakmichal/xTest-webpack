@@ -1,15 +1,21 @@
-function test() {
+const textArea = document.querySelector('.text-area');
+const result = document.querySelector('.result');
 
+function test(value) {
+    const regExp = /\w+ -/g
+    return value.replace(regExp, (el) => `<br/>${el}`);
 }
 
+textArea.addEventListener('input', (e) => {
+    result.innerHTML = test(e.target.value)
+})
+
 // document.querySelector(".test").textContent = test("moonmen");
-console.log(test())
+// console.log(test())
 
 export { test }
 
 //Square Every Digit
-
-
 // const squareDigits = (num) => Number((num + '').split("").map(c => c *c).join(""));
 // return +String(num).split('').map(function(num){return +num * +num;}).join('');
 // --n
