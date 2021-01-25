@@ -13,6 +13,43 @@ textArea.addEventListener('input', (e) => {
 // document.querySelector(".test").textContent = test("moonmen");
 // console.log(test())
 
+console.log("%c result", "background: #209020;", result )
+console.log('%c Oh my heavens! ', 'color: #bada55');
+
+console.log(`hello i am ${result} string`)
+
+console.assert(result.classList.contains('ouch-no'), "that is wrong");
+
+console.dir(result)
+
+console.clear();
+
+const array = ['a', 'b', 'c', 'd'];
+
+array.forEach(letter => {
+    console.group(`${letter}`);
+    console.log("a");
+    console.log("b");
+    console.log("c");
+    console.log("d");
+    console.groupEnd(`${letter}`);
+})
+
+console.count(result);
+console.count(result);
+console.count(result);
+console.count(result);
+console.count('abc');
+console.count('abc');
+
+console.time("fetching data");
+ fetch('url', option)
+.then(data => data.json())
+    .then(data => {
+        console.timeEnd("fetching data");
+        console.log(data)
+    })
+
 export { test }
 
 //Square Every Digit
