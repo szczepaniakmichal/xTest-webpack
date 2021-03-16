@@ -1,15 +1,6 @@
-const textArea = document.querySelector('.text-area');
-const result = document.querySelector('.result');
+function test() {
 
-function test(value) {
-    const regExp = /[a-zA-Ząćęłńóśźż]+ -/gi
-    return value.replace(regExp, (el) => `<br/>${el}`);
 }
-
-textArea.addEventListener('input', (e) => {
-    result.innerHTML = test(e.target.value)
-})
-
 
 export { test }
 
