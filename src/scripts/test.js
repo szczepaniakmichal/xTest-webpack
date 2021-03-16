@@ -1,4 +1,29 @@
+const links = document.querySelectorAll('a');
+const hightlight = document.createElement('div');
+hightlight.classList.add('hightlight');
+document.body.appendChild(hightlight);
+
+
+function hightlightLink() {
+    const linkCords = this.getBoundingClientRect();
+    console.log(this)
+
+    const lightCords = {
+        width: linkCords.width,
+        height: linkCords.height,
+        top: linkCords.top,
+        left: linkCords.left,
+    }
+
+    hightlight.style.width = `${lightCords.width}px`;
+    hightlight.style.height = `${lightCords.height}px`;
+    hightlight.style.transform = `translate(${lightCords.left}px, ${lightCords.top}px)`;
+    hightlight.textContent = this.textContent;
+}
+
 function test() {
+
+    links.forEach(link => link.addEventListener('mouseenter', hightlightLink))
 
 }
 
